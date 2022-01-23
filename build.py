@@ -1,19 +1,21 @@
-# 参考 https://www.python-izm.com/third_party/executable/py2exe/
-from distutils.core import setup
-import py2exe
+# coding: utf-8
+# 参考 https://tomomai.com/python_cx_freeze/
+# cx_Freeze 用セットアップファイル
  
-option = {
-    'compressed': 1,
-    'optimize': 2,
-    'bundle_files': 1,
-}
+import sys
+from cx_Freeze import setup, Executable
  
-setup(
-    options = {
-        'py2exe': option,
-    },
-    console = [
-        {'script': 'main.py'}
-    ],
-    zipfile = None,
-)
+base = None
+
+# GUI=有効, CUI=無効 にする
+if sys.platform == 'win32' : base = 'Win32GUI'
+
+# exe にしたい python ファイルを指定
+exe = Executable(script = 'main.py',
+                 base = base, icon='icon/icon.ico')
+ 
+# セットアップ
+setup(name = 'YouTubeDownloader',
+      version = '1.0',
+      description = 'YouTubeDownloader',
+      executables = [exe])
