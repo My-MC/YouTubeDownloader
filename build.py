@@ -12,7 +12,7 @@ if sys.platform == 'win32' : base = 'Win32GUI'
 
 # exe にしたい python ファイルを指定
 exe = Executable(script = 'main.py',
-                 base = base, icon='icon/icon.ico')
+                 base = base, icon='icon.ico')
  
 # セットアップ
 setup(name = 'YouTubeDownloader',
