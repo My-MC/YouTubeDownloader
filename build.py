@@ -1,3 +1,4 @@
+# 参考 http://silence2you.blogspot.com/2013/05/py2exeexe.html
 from distutils.core import setup
 import py2exe
 
