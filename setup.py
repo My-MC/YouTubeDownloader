@@ -4,7 +4,7 @@ setup(
     name='YoutubeDownloader',
     version='1.0',
     packages=[''],
-    install_requires=["yt-dlp", "PySimpleGUI"],
+    install_requires=["yt-dlp", "PySimpleGUI, py2win"],
     url='https://github.com/My-MC/YoutubeDownloader',
     license='MIT License',
     author='My-MC',

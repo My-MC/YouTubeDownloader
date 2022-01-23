@@ -1,0 +1,6 @@
+#venv
+.venv
+#build関連
+build
+dist
+YoutubeDownloader.egg-info
