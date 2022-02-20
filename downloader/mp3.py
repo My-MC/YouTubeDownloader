@@ -3,12 +3,14 @@ from yt_dlp import YoutubeDL
 
 def mp3(x):
     ydl_opts = {
-        'format': 'bestaudio/best',
-        'postprocessors': [
-            {'key': 'FFmpegExtractAudio',
-             'preferredcodec': 'mp3',
-             'preferredquality': '192'},
-            {'key': 'FFmpegMetadata'},
+        "format": "bestaudio/best",
+        "postprocessors": [
+            {
+                "key": "FFmpegExtractAudio",
+                "preferredcodec": "mp3",
+                "preferredquality": "192",
+            },
+            {"key": "FFmpegMetadata"},
         ],
     }
     with YoutubeDL(ydl_opts) as ydl:

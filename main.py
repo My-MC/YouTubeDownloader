@@ -9,12 +9,13 @@ Sg.theme("default1")
 combo_val = ["best", "標準", "mp3", "wav"]
 
 title = "Youtube Downloader"
-layout = [[Sg.Text("URL : "), Sg.InputText(key="-URL-")],
-          [Sg.Combo(combo_val, default_value="選択してください", size=(20, 1), key="-TYPE-")],
-          [Sg.Button("Download", key="-ENTER-")],
-          [Sg.Text(key="-RESULT-", size=(20, 1))],
-          [Sg.Output(size=(50, 10))]
-          ]
+layout = [
+    [Sg.Text("URL : "), Sg.InputText(key="-URL-")],
+    [Sg.Combo(combo_val, default_value="選択してください", size=(20, 1), key="-TYPE-")],
+    [Sg.Button("Download", key="-ENTER-")],
+    [Sg.Text(key="-RESULT-", size=(20, 1))],
+    [Sg.Output(size=(50, 10))],
+]
 window = Sg.Window(title, layout, size=(400, 300))
 
 while True:
