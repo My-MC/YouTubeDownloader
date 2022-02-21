@@ -18,4 +18,5 @@ exe = Executable(script = 'main.py',
 setup(name = 'YouTubeDownloader',
       version = '1.0',
       description = 'YouTubeDownloader',
+      icon_resources = "icon.ico",
       executables = [exe])
