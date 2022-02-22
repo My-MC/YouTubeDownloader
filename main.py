@@ -1,4 +1,6 @@
 import PySimpleGUI as Sg
+import base64
+import ctypes
 import downloader.wav as wav
 import downloader.mp3 as mp3
 import downloader.webm as webm
@@ -8,14 +10,10 @@ Sg.theme("default1")
 
 combo_val = ["best", "標準", "mp3", "wav"]
 
-icon = b"iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhmlDQ1BJQ0MgcHJvZmlsZQAAKM" \
-       b"+VkT1Iw1AUhU9TiyIVBwuKOGSoLloQFXWUKBbBQmkrtOpg8tI/aNKQpLg4Cq4FB38Wqw4uzro6uAqC4A" \
-       b"+Io5OToouUeF9SaBEqeOHxPs5753DffYBQKzHN6hgHNN02E1FJTGdWxc5X+NCPAGYwKjPLiCUXU2hbX/d0m+ouwrPwv" \
-       b"+pRsxYDfCLxHDNMm3iDeHrTNjjvE4dYQVaJz4nHTGqQ+JHrisdvnPMuCzwzZKYS88QhYjHfwkoLs4KpEU8Rh1VNp3wh7bHKeYuzVqqwRp" \
-       b"/8hcGsvpLkOq0hRLGEGOIQoaCCIkqwEaFdJ8VCgs6lNv5B1x8nl0KuIhg5FlCGBtn1g//B79lauckJLykoAYEXx/kYBjp3gXrVcb6PHad" \
-       b"+AvifgSu96S/XgNlP0qtNLXwE9G4DF9dNTdkDLneAgSdDNmVX8tMScjng/Yy+KQP03QLda97cGuc4fQBSNKvlG+DgEBjJU" \
-       b"/Z6m3d3tc7tzzvu/CD9AMxVcsufQt72AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAABmJLR0QA" \
-       b"/wAAAAAzJ3zzAAAAB3RJTUUH5gEXBTsaO3zAAAAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAGdSURBVDhPnVI7TwJBGJy78zgVH0dICMZETIi9iT0NtRT8AisbS0saKC2NDYmtPTT0RmgsjI0tUSTGBBWwIaB3rLPrgnqKr0nm8u238z1vDUEgiGIRKJWAeh14fgZWV4F0GsjlAMvSIg2ZYIz9fZnte25va/Er6NHIZj+LJ3FpSQfxqL6/qRzk5qYKpSW/r85byxKXtj0+P5qmOFpYUHab9sg/ZrMprHw8nkelovaxF41ifTBA0XWxOBzingvzDQNP5GEkgpupKZw7DuKehzmZotOBqbatsdHvI8zAK9tGdWZGBUic0q7T12bC49lZGMpLlMvsI5lU7VyEQh/al+wG2u4b/OvvzpKGSCQEGg1VkQlU22e01zjKA+2DVgu7sRgsynscJeb7iJI73a5qwhCplMDJCa7ZrqzfYdA8x4hQdEefnN+nsGeamOZ9iHfL3EFY1uc+IAoF1cq/mMlwBM8T0Mv6M2o1mYaQzzOY/SeurKhQWhryeX4lnESNN0tCPs+vxO+pK49ATwB8nmJrSwjXfQtyHLUwUa1q0QhCvADCFvApF20t8QAAAABJRU5ErkJggg== "
+myappid = 'my_mc.youtubedownloader.1_0'
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+
+icon = base64.b64encode(open(r"icon.png", "rb").read())
 
 title = "Youtube Downloader"
 layout = [
@@ -25,7 +23,7 @@ layout = [
     [Sg.Text(key="-RESULT-", size=(20, 1))],
     [Sg.Output(size=(50, 10))],
 ]
-window = Sg.Window(title, layout, size=(400, 300), icon= icon)
+window = Sg.Window(title, layout, size=(400, 300), icon=icon, finalize=True)
 
 while True:
     event, values = window.read()

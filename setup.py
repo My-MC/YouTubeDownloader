@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-    name='YoutubeDownloader',
-    version='1.0',
-    packages=[''],
+    name="YoutubeDownloader",
+    version="1.0",
+    packages=[""],
     install_requires=["yt-dlp", "PySimpleGUI", "cx_Freeze", "black", "pytest"],
-    url='https://github.com/My-MC/YoutubeDownloader',
-    license='MIT License',
-    author='My-MC',
-    author_email='',
-    description='YoutubeDownloader'
+    url="https://github.com/My-MC/YoutubeDownloader",
+    license="MIT License",
+    author="My-MC",
+    author_email="",
+    description="YoutubeDownloader",
 )

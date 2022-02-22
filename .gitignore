@@ -1,5 +1,7 @@
 #venv
 .venv
+#pytest
+.pytest_cache
 #build関連
 build
 dist
