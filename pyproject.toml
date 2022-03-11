@@ -10,6 +10,7 @@ python = "^3.10"
 PySimpleGUI = "^4.57.0"
 yt-dlp = "^2022.3.8"
 cx-Freeze = "^6.10"
+PyYAML = "^6.0"
 
 [tool.poetry.dev-dependencies]
 black = "^22.1.0"
