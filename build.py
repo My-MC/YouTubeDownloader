@@ -12,13 +12,13 @@ if sys.platform == "win32":
     base = "Win32GUI"
 
 # exe にしたい python ファイルを指定
-exe = Executable(script="main.py", base=base, icon="icon.ico")
+exe = Executable(script="run.py", base=base, icon="icon.ico")
 
 # セットアップ
 setup(
     name="YouTubeDownloader",
     version="1.0",
     description="YouTubeDownloader",
-    options={"build_exe": {"include_files": ["icon.png"]}},
+    options={"build_exe": {"include_files": ["icon.png", "conf"]}},
     executables=[exe],
 )
