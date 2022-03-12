@@ -1,7 +1,7 @@
 from yt_dlp import YoutubeDL
 
 
-def mp3(x):
+def mp3(self):
     ydl_opts = {
         "format": "bestaudio/best",
         "postprocessors": [
@@ -14,7 +14,7 @@ def mp3(x):
         ],
     }
     with YoutubeDL(ydl_opts) as ydl:
-        ydl.download(x)
+        ydl.download(self)
 
 
 if __name__ == "__main__":
