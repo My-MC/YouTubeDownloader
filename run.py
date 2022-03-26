@@ -52,9 +52,10 @@ with open("conf/conf.yml", "r") as f:
                 save_name = "FFmpeg.zip"
                 os.mkdir("cache")
                 urllib.request.urlretrieve(url, save_name)
-                shutil.unpack_archive("FFmpeg.zip", "cache")
+                shutil.unpack_archive(save_name, "cache")
                 copy_tree("./cache/ffmpeg-n5.0-latest-win64-lgpl-5.0/bin", "./")
                 shutil.rmtree("./cache")
+                os.remove(save_name)
 
                 window["-RESULT-"].update(
                     "Finished setting up. Please press Finish button"
